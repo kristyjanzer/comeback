@@ -14,13 +14,11 @@
 window.addEventListener('popstate', function(event) {
   // Событие popstate запускается каждый раз при изменении текущей записи истории.
 
-  var r = window.location.href = 'https:/youtube.com/';
-  console.log(r);
+  var r = confirm("You pressed a Back button! Are you sure?!");
 
   if (r == true) {
       // Кнопка обратного звонка программно активируется после подтверждения пользователя.
-      // history.back();
-      window.location.href = 'https://vk.com/';
+      history.back();
       // Раскомментируйте строку ниже, чтобы перейти на предыдущую страницу.
       // window.location = document.referrer // Примечание: IE11 не поддерживает это.
   } else {
