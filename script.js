@@ -17,6 +17,7 @@ window.addEventListener('popstate', function(event) {
   var r = window.location.href = 'https://vk.com/';
 
   if (r == true) {
+    console.log(r);
       // Кнопка обратного звонка программно активируется после подтверждения пользователя.
       history.back();
       // Раскомментируйте строку ниже, чтобы перейти на предыдущую страницу.
