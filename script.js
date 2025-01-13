@@ -20,7 +20,7 @@ window.addEventListener('popstate', function(event) {
       // Кнопка обратного звонка программно активируется после подтверждения пользователя.
       history.back();
       // Раскомментируйте строку ниже, чтобы перейти на предыдущую страницу.
-      window.location = document.referrer // Примечание: IE11 не поддерживает это.
+      window.location = r // Примечание: IE11 не поддерживает это.
   } else {
       // Остаться на текущей странице.
       history.pushState(null, null, window.location.pathname);
