@@ -39,7 +39,7 @@ function pushStateWithSource(state, title, url, source) {
 
 // Задаём направление как 'назад' или 'вперёд'
 // Это можно сравнить с тем, как если бы вы дали пользователю компас
-pushStateWithSource({}, '', 'https://vk.com/', 'back');
+pushStateWithSource({}, '', 'nextpage.html', 'back');
 
 // Отслеживаем событие popstate
 window.addEventListener('popstate', function(event) {
