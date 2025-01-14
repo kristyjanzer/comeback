@@ -17,7 +17,7 @@ window.addEventListener('popstate', function(event) {
   // var r = confirm("You pressed a Back button! Are you sure?!");
 
   if(event.state){
-     history.pushState(null, null, window.location.href="vk.com");
+     history.pushState(null, null, "https://vk.com");
     // window.location.href="https://vk.com/"
       // Кнопка обратного звонка программно активируется после подтверждения пользователя.
       // history.back();
