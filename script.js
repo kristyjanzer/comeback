@@ -11,25 +11,35 @@
 //   console.log('Вернулся');
 // }
 
-window.addEventListener('popstate', function(event) {
-  // Событие popstate запускается каждый раз при изменении текущей записи истории.
+// window.addEventListener('popstate', function(event) {
+//   // Событие popstate запускается каждый раз при изменении текущей записи истории.
 
-  // var r = confirm("You pressed a Back button! Are you sure?!");
+//   // var r = confirm("You pressed a Back button! Are you sure?!");
 
-  if(event.state){
-    var r = confirm("You pressed a Back button! Are you sure?!");
-     history.pushState(null, null, "https://vk.com");
-    // window.location.href="https://vk.com/"
-      // Кнопка обратного звонка программно активируется после подтверждения пользователя.
-      // history.back();
-      // Раскомментируйте строку ниже, чтобы перейти на предыдущую страницу.
-      // window.location = document.referrer // Примечание: IE11 не поддерживает это.
-  } else {
-      // Остаться на текущей странице.
-      history.pushState(null, null, window.location.pathname);
-  }
+//   if(event.state){
+//     var r = confirm("You pressed a Back button! Are you sure?!");
+//      history.pushState(null, null, "https://vk.com");
+//     // window.location.href="https://vk.com/"
+//       // Кнопка обратного звонка программно активируется после подтверждения пользователя.
+//       // history.back();
+//       // Раскомментируйте строку ниже, чтобы перейти на предыдущую страницу.
+//       // window.location = document.referrer // Примечание: IE11 не поддерживает это.
+//   } else {
+//       // Остаться на текущей странице.
+//       history.pushState(null, null, window.location.pathname);
+//   }
 
-  // history.pushState(null, null, window.location.pathname);
+//   // history.pushState(null, null, window.location.pathname);
 
+// });
+
+history.pushState(null, document.title, location.href);
+window.addEventListener('popstate', function (event)
+{
+    const leavePage = confirm("you want to go ahead ?");
+    if (leavePage) {
+        history.back(); 
+    } else {
+        history.pushState(null, document.title, location.href);
+    }  
 });
-
