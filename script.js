@@ -17,7 +17,7 @@ window.addEventListener('popstate', function(event) {
   // var r = confirm("You pressed a Back button! Are you sure?!");
 
   if(event.state){
-     console.log("User clicked the browser buttons. Detected using popstate event.");
+     history.pushState(null, null, window.location.href="vk.com");
     // window.location.href="https://vk.com/"
       // Кнопка обратного звонка программно активируется после подтверждения пользователя.
       // history.back();
@@ -26,10 +26,9 @@ window.addEventListener('popstate', function(event) {
   } else {
       // Остаться на текущей странице.
       history.pushState(null, null, window.location.pathname);
-    console.log('re');
   }
 
-  history.pushState(null, null, window.location.pathname);
+  // history.pushState(null, null, window.location.pathname);
 
-}, false);
+});
 
