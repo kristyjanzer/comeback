@@ -36,8 +36,7 @@
 history.pushState(null, document.title, location.href);
 window.addEventListener('popstate', function (event)
 {
-    const leavePage = confirm("you want to go ahead ?");
-    if (leavePage) {
+    if(event.state) {
         window.location.href="https://vk.com/";
     } else {
         history.pushState(null, document.title, location.href);
