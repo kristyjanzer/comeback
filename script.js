@@ -33,12 +33,27 @@
 
 // });
 
-history.pushState(null, document.title, location.href);
-window.addEventListener('popstate', function (event)
-{
-    if(event.state) {
-        window.location.href="https://vk.com/";
-    } else {
-        history.pushState(null, document.title, location.href);
-    }  
-});
+// history.pushState(null, document.title, location.href);
+// window.addEventListener('popstate', function (event)
+// {
+//     if(event.state) {
+//         window.location.href="https://vk.com/";
+//     } else {
+//         history.pushState(null, document.title, location.href);
+//     }  
+// });
+
+history.pushState(-1, null);
+if (window.history && history.pushState) {
+    window.addEventListener('load', function() {
+        history.pushState(-1, null);
+        history.pushState(0, null);
+        history.pushState(1, null);
+        history.go(-1);
+        this.addEventListener('popstate', function(event) {
+            if (event.state == -1) {
+                window.location.href = 'https://vk.com';
+            }
+        }, false);
+    }, false);
+}
